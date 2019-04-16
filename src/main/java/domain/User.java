@@ -32,6 +32,7 @@ public class User {
         return this.reservationList;
     }
 
+    /* 총 가격 계산하는 메소드 */
     public int sumOfPrice() {
         int sumOfPrice = 0;
         for (Reservation reservation : reservationList) {
@@ -40,6 +41,7 @@ public class User {
         return sumOfPrice;
     }
 
+    /* 총 가격에서 포인트 뺀 실제 결제할 금액 */
     public int getPayment() {
         return this.sumOfPrice() - this.point;
     }

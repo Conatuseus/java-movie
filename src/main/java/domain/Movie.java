@@ -43,6 +43,7 @@ public class Movie {
         return this.playSchedules.size();
     }
 
+    /* 시간표상에서 몇번째인지 받아서 해당 스케쥴 반환하는 메소드*/
     public PlaySchedule getPlaySchedule(int scheduleNumber) {
         return this.playSchedules.get(scheduleNumber);
     }
