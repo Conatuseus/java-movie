@@ -16,29 +16,37 @@ public class MovieApplication {
         User user=new User();
         Reservation reservation;
 
-        int movieId;
-        do {
-            movieId = InputView.inputMovieId();
-        }
-        while (!MovieRepository.isContains(movieId));
-
+        int movieId=movieIdInit();
         OutputView.printMovieById(movieId);
 
-        int scheduledNumber;
-        do {
-            scheduledNumber = InputView.inputMovieSchedule();
-        }
-        while (scheduledNumber > movies.get(movieId).getScheduleSize()
-                || MovieRepository.getMovieById(movieId).getPlaySchedule(scheduledNumber-1).getCapacity() <= 0);
-
+        int scheduledNumber=scheduleNumberInit(movies,movieId);
         int numberOfPeople=InputView.inputNumberOfPeople();
 
         reservation=new Reservation(movieId,scheduledNumber,numberOfPeople);
         user.addReservation(reservation);
 
         OutputView.printUserReservationList(user.getReservationList());
+        MovieRepository.getMovieById(movieId).getPlaySchedule(scheduledNumber).subCapacity(numberOfPeople);
 
     }
 
+    public static int movieIdInit(){
+        int movieId;
+        do {
+            movieId = InputView.inputMovieId();
+        }
+        while (!MovieRepository.isContains(movieId));
+        return movieId;
+    }
+
+    public static int scheduleNumberInit(List<Movie> movies, int movieId){
+        int scheduledNumber;
+        do {
+            scheduledNumber = InputView.inputMovieSchedule();
+        }
+        while (scheduledNumber > movies.get(movieId).getScheduleSize()
+                || MovieRepository.getMovieById(movieId).getPlaySchedule(scheduledNumber-1).getCapacity() <= 0);
+        return scheduledNumber;
+    }
 
 }
