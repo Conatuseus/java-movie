@@ -17,5 +17,6 @@ public class MovieApplication {
         while (!MovieRepository.isContains(movieId));
 
         OutputView.printMovieById(movieId);
+
     }
 }
