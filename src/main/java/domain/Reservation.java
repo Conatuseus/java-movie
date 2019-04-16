@@ -30,7 +30,8 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return MovieRepository.getMovieById(movieId).toString()
+        Movie movie=MovieRepository.getMovieById(movieId);
+        return movie.getId()+" - "+ movie.getName()+" , " + movie.getPrice()+"원\n"
                 + "시작시간: " + format(this.getStartTime()) + "\n예약인원: " + this.numberOfPeople + "\n";
     }
 
