@@ -29,7 +29,7 @@ public class MovieApplication {
             scheduledNumber = InputView.inputMovieSchedule();
         }
         while (scheduledNumber > movies.get(movieId).getScheduleSize()
-                || MovieRepository.getMovieById(movieId).getPlaySchedule().get(scheduledNumber-1).getCapacity() <= 0);
+                || MovieRepository.getMovieById(movieId).getPlaySchedule(scheduledNumber-1).getCapacity() <= 0);
 
         int numberOfPeople=InputView.inputNumberOfPeople();
 

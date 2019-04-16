@@ -30,8 +30,8 @@ public class Movie {
         return this.playSchedules.size();
     }
 
-    public List<PlaySchedule> getPlaySchedule() {
-        return this.playSchedules;
+    public PlaySchedule getPlaySchedule(int scheduleNumber) {
+        return this.playSchedules.get(scheduleNumber);
     }
 
     void addPlaySchedule(PlaySchedule playSchedule) {
