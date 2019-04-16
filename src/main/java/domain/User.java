@@ -7,6 +7,9 @@ public class User {
 
     private final List<Reservation> reservationList=new ArrayList<>();
 
+    public void addReservation(Reservation reservation){
+        reservationList.add(reservation);
+    }
 
     public int sumOfPrice(){
         int sumOfPrice=0;
