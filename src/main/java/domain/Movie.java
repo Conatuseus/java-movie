@@ -22,6 +22,10 @@ public class Movie {
         return this.id;
     }
 
+    public int getScheduleSize(){
+        return this.playSchedules.size();
+    }
+
     void addPlaySchedule(PlaySchedule playSchedule) {
         playSchedules.add(playSchedule);
     }

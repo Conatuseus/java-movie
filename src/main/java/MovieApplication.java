@@ -18,5 +18,11 @@ public class MovieApplication {
 
         OutputView.printMovieById(movieId);
 
+        int scheduledNumber;
+        do {
+            scheduledNumber = InputView.inputMovieSchedule();
+        }
+        while (scheduledNumber > movies.get(movieId).getScheduleSize());
+
     }
 }
