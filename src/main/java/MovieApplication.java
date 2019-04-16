@@ -29,6 +29,10 @@ public class MovieApplication {
         int isContinue=InputView.inputContinue();
         if(isContinue==1) {
             OutputView.printUserReservationList(user.getReservationList());
+
+        }
+        else{
+
         }
 
     }
