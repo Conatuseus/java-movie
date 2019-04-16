@@ -24,6 +24,7 @@ public class User {
         this.point = point;
     }
 
+    /* 예약 list에 추가하는 매소드 */
     public void addReservation(Reservation reservation) {
         reservationList.add(reservation);
     }

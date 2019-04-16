@@ -49,6 +49,7 @@ public class MovieApplication {
         OutputView.printPayment(user);                                              // 사용자 결제 금액 출력
     }
 
+    /* move Id 입력받는 함수 실행 및 확인해서 반환 */
     public static int movieIdInit() {
         int movieId;
         do {
